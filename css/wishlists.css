@@ -1,0 +1,114 @@
+#tablewishList{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#tablewishList tr td{
+    text-align: center;
+    color: black;
+}
+
+#tablewishList tr td a{
+    text-decoration: none;
+    color: black;
+}
+
+#imagewishlist{
+    width: 100%;
+    height: 100px;
+}
+
+.descriptionformpage{
+    border-radius: 15px;
+    box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    width: 200px;
+}
+
+.descriptionformpage form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn,#delete a,#send{
+    font-size: 15px;
+    font-weight: bold;
+    outline: none;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: .2s;
+    background: white;
+    border: 2px solid white;
+    color: black;
+}
+
+.btn:hover,#delete a:hover,#send:hover{
+    background: white;
+    border: 2px solid gray;
+    color: gray;
+}
+
+#actions{
+    padding-left: 90px;
+}
+
+#items{
+    text-align: center;
+    font-weight: bold;
+    font-size: 25px;
+    color: #333;
+    position: relative;
+}
+
+tbody{
+    border-radius: 10px;
+    box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 10px;
+}
+
+tr:first-child td{
+    font-weight: bold;
+}
+
+#tablewishList #firsttable td{
+    font-weight: bold;
+}
+
+.noproducts{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#iconempty{
+    width: 150px;
+}
+
+#btn_shopnow{
+    text-decoration: none;
+    padding: 10px 20px;
+    background: #72abee;
+    border-radius: 8px;
+    color: white;
+    font-size: 15px;
+    transition: all 1s;
+    line-height: 2;
+    display: inline-block;
+    text-align: center;
+    width: 250px;
+}
+
+#btn_shopnow:hover{
+    background: #2c7cd8;
+    box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+#paragraph{
+    color: #888;
+    font-size: smaller;
+}

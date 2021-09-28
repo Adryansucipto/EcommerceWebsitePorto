@@ -1,0 +1,4 @@
+id,name,price,brand,stars,img,description,color
+INSERT INTO products VALUES
+('','Samsung S21',16999000,'Samsung',5,'SamsungS21_black.jfif','Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..','black'),
+('','XiaomiMiNote10Pro',3400000,'Xiaomi',5,'XiaomiMiNote10Pro_green.jpg','Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..','green')

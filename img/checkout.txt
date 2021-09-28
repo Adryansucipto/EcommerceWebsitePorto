@@ -1,0 +1,136 @@
+<tr>                    
+                                <td><p><?=$i.'.'?></p></td>
+                                <td><p><?=$item['name'].' '.$item['color']?></p></td>
+                                <td><img src="./img/<?=$item['img']?>" alt="item" id="imageCheckOut"></td>
+                                <td><p><?='Rp. '.$item['price'].',-'?></p></td>
+                                <td><?=$item['quantity']?></td>
+                                <td id="delete"><a href="delete.php?id=<?=$item['idproduct']?>" onclick="return confirm('yakin?');"><i class="fa fa-trash" aria-hidden="true"></i></a></td>  
+                           
+                    </tr>
+
+ <div class="checkOutPage">
+            <h3 id="title">CheckOut Products</h3> 
+                 <!-- jika item wishlist ada -->
+                <div class="contentCheckOut">
+                    <?php if ($items!=NULL):?>
+                        <div class="topContent">
+                            <h4>No</h4>
+                            <h4>Name Product</h4>
+                            <h4>Image</h4>
+                            <h4>Price</h4>
+                            <h4>Quantity</h4>
+                            <h4>Action</h4>
+                        </div>
+                        <?php $i=1?>
+                        <div class="content">
+                                <?php foreach($items as $item):?>                 
+                                    <p id="left1"><?=$i.'. '?></p>
+                                    <p id="left2"><?=$item['name'].' '.$item['color']?></p>
+                                    <img src="./img/<?=$item['img']?>"id="left3"  alt="item" id="imageCheckOut" style="width: 50px;">
+                                    <p id="left4"><?='Rp. '.$item['price'].',-'?></p>
+                                    <form action="" method="post">
+                                        <input type="hidden" name="idbarang" id="barang" class="barang" value="<?=$item['idproduct']?>">
+                                        <input type="number" name="quantity" id="quantity" class="quantity" value="<?=$item['quantity']?>" min="1" max="99" style="width: 40px;">
+                                        <button type="submitwish" name="submitquantity" id="left5">OK</button>
+                                    </form>
+                                    <form action="" method="post">
+                                        <input type="hidden" name="idbarang" id="quantity" class="quantity" value="<?=$item['idproduct']?>">
+                                        <button type="submitdelete" name="submitdelete" id="left6">Delete</button>
+                                    </form>
+                                    
+                    
+                                <?php $i++?>
+                                <?php endforeach;?> 
+                    
+                        </div>
+
+                        <tr id="totalPrice">
+                            <td>Total Price:</td>
+                            <td><h3><?='Rp. '.$totalprice["price"].',-'?></h3></td>
+                        </tr>
+                        <?php endif;?>
+                </div>
+            <!-- jika item wishlist tidak ada -->
+            <?php if($items==NULL):?>
+                <p id="items">No Products In Here! <i class="fa fa-frown-o" aria-hidden="true"></i></p>
+            <?php endif; ?>             
+            <br>
+        </div>
+
+
+<div class="checkOutPage">
+            <h3 id="title">CheckOut Products</h3> 
+            <br>
+            <table id="tableCheckOut">
+                 <!-- jika item wishlist ada -->
+
+                <?php if ($items!=NULL):?>
+                    <tr>
+                        <td>No</td>
+                        <td>Name Product</td>
+                        <td>Image</td>
+                        <td>Price</td>
+                        <td>Quantity</td>
+                        <td id="actions">Action</td>
+                    </tr>
+                   <?php $i=1?>
+                    <?php foreach($items as $item):?>
+
+                    <tr>                    
+                                <td><p><?=$i.'.'?></p></td>
+                                <td><p><?=$item['name'].' '.$item['color']?></p></td>
+                                <td><img src="./img/<?=$item['img']?>" alt="item" id="imageCheckOut"></td>
+                                <td><p><?='Rp. '.$item['price'].',-'?></p></td>
+                                <td>
+                                    <form action="" method="post">
+                                        <input type="hidden" name="idbarang" id="quantity" class="quantity" value="<?=$item['idproduct']?>">
+                                        <input type="number" name="quantity" id="quantity" class="quantity" value="<?=$item['quantity']?>" min="1" max="99" style="width: 40px;">
+                                        <button type="submitwish" name="submitquantity" id="submitwish">OK</button>
+                                    </form>
+                                </td>
+                                <td id="delete"><a id="deletebtn"href="delete.php?id=<?=$item['idproduct']?>" ><i class="fa fa-trash" aria-hidden="true"></i></a></td>  
+
+                    </tr>
+                    
+                    <?php $i++?>
+                    <?php endforeach;?> 
+                <?php endif;?>
+
+                    <tr id="totalPrice">
+                        <td>Total Price:</td>
+                        <td><h3><?='Rp. '.$totalprice["price"].',-'?></h3></td>
+                    </tr>
+                
+            </table>       
+            <!-- jika item wishlist tidak ada -->
+            <?php if($items==NULL):?>
+                <p id="items">No Products In Here! <i class="fa fa-frown-o" aria-hidden="true"></i></p>
+            <?php endif; ?>             
+            <br>
+        </div>
+
+
+<?php
+    session_start();
+    require 'function.php';
+
+    if(!isset($_SESSION['userid'])){
+        $userid = -1;
+    }
+    else{
+        $userid = $_SESSION['userid'];
+    }
+    $idbarang = $_GET["id"];
+    if(delete($userid,$idbarang)>0){
+        echo "
+            <script>
+            document.location.href = 'checkout.php';
+            </script>";
+    }
+    else{
+        echo "
+            <script>
+            document.location.href = 'checkout.php';
+            </script>";
+    }
+?>

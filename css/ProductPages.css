@@ -1,0 +1,99 @@
+.product{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 50px 300px;
+}
+
+.product .product-page{
+    display: flex;
+    flex-direction: row;
+}
+
+.product .product-page .imgpage img{
+    max-width: 300px;
+}
+
+.product .product-page .formpage{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.descriptionformpage{
+    border-radius: 15px;
+    box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    width: 230px;
+}
+
+.descriptionformpage form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn,#submitcart,#submitwish{
+    font-size: 15px;
+    font-weight: bold;
+    outline: none;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: .2s;
+    background: white;
+    border: 2px solid white;
+    color: black;
+}
+
+.btn:hover,button#submitcart:hover,button#submitwish:hover{
+    background: white;
+    border: 2px solid gray;
+    color: gray;
+}
+
+#quantity{
+    width: 100%;
+    text-align: center;
+    padding: 8px;
+    outline: none;
+    border: 2px solid #777;
+    border-radius: 10px;
+    font-weight: bold;
+    background-color: unset;
+    color: black;
+}
+
+.descriptionformpage form ul li{
+    list-style-type: none;
+    padding: 5px;
+}
+
+.counter,#submitcart i,#submitwish i{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.counter label{
+    font-weight: bold;
+}
+    
+@media screen and (max-width: 1000px) {
+    .product{
+        margin: 50px 180px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .product{
+        margin: 50px 150px;
+    }
+}
+  
+@media screen and (max-width: 576px) {  
+    .product{
+        margin: 50px 140px;
+    } 
+}

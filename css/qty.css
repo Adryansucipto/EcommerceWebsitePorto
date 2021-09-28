@@ -1,0 +1,40 @@
+#qty,#qty1{
+    min-width: 20px;
+    min-height: 20px;
+    color: white;
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 1.6;
+    text-align: center;
+    background-color: rgb(239, 20, 74);
+    border: 2px solid var(--N0,#FFFFFF);
+    border-radius: 18px;
+    position: absolute;
+    top: 20px;
+    padding: 0px 4px;
+    transform: translate(110%, -8%);
+}
+
+@media screen and (max-width: 576px) {  
+    #qty,#qty1{
+        min-width: 20px;
+        min-height: 20px;
+        color: white;
+        font-size: 10px;
+        font-weight: 700;
+        line-height: 1.6;
+        text-align: center;
+        background-color: rgb(239, 20, 74);
+        border: 2px solid var(--N0,#FFFFFF);
+        border-radius: 18px;
+        position: absolute;
+        top: 300px;
+        left: 115px;
+        padding: 0px 4px;
+        transform: translate(50%, -8%);
+    }
+    #qty1{
+        top: 250px;
+    }
+         
+}
