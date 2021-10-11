@@ -111,17 +111,17 @@
                         </li>
                     </ul>
                     <ul id="nav_4">
-                    <li class='active'>
-                                    <?php 
-                                        if(isset($_SESSION["username"])){ 
-                                            auth();
-                                            echo '<a href="logout.php" id="logoutbtn">Logout<img src="./img/logout.png" alt="icon" style="width: 20px;"></a></li>';
-                                        }
-                                        elseif(!isset($_SESSION["username"])){
-                                            echo '<a href="login.php" id="loginbtn" >Login</a></li>';
-                                        }
-                                    ?>
-                                </li>
+                        <li class='active'>
+                                        <?php 
+                                            if(isset($_SESSION["username"])){ 
+                                                auth();
+                                                echo '<a href="logout.php" id="logoutbtn">Logout<img src="./img/logout.png" alt="icon" style="width: 20px;"></a></li>';
+                                            }
+                                            elseif(!isset($_SESSION["username"])){
+                                                echo '<a href="login.php" id="loginbtn" >Login</a></li>';
+                                            }
+                                        ?>
+                        </li>
                     </ul>
                 </div>
 
